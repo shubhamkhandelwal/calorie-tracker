@@ -1,0 +1,9 @@
+<div class="calendar">
+  <div
+    class="month"
+    *ngFor="let month of months"
+    [routerLink]="['month', month.short | lowercase]"
+  >
+    <p>{{ month.short | uppercase }}</p>
+  </div>
+</div>

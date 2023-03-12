@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="header">
+    <button (click)="goBack()" class="back-button "> Back </button >
+    <h1>  {{ month.name | uppercase }}</h1>
+  </div>
+  <div class="month">
+    <div class="day" *ngFor="let day of days" [routerLink]="[day]">
+      <div class="day-no">{{ day }}</div>
+    </div>
+  </div>
+</div>

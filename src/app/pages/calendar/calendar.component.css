@@ -1,0 +1,28 @@
+.calendar {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	height: 100vh;
+	margin: 0 auto;
+}
+
+.month {
+	height: 100%;
+	width: 100%;
+	border: 1px solid gray;
+	color: rgb(248, 202, 202);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid gray;
+	background-color: #191825;
+}
+
+
+.month:hover {
+	cursor: pointer;
+	background-color: rgb(88, 88, 88);
+}
+
+.month p {
+	font-size: 3rem;
+}

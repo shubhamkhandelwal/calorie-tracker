@@ -1,0 +1,195 @@
+.day {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background-color: #37306B;
+  color: white;
+}
+
+.meal-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem;
+  width: 90%;
+  margin-top: 3rem;
+}
+
+.meal-tab-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.meal-tab-links > li {
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.meal-tab-links > li:hover {
+  cursor: pointer;
+  background-color: #3a3666;
+  color: rgb(255, 233, 233);
+}
+
+.meal-tab-active-link {
+  background-color: #37306B;
+  color: white;
+}
+
+.meal-tab-container {
+  display: flex;
+  flex-direction: column;
+  height: 40rem;
+  border: 1px solid #37306B;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.meal-header {
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #37306B;
+  color: white;
+  text-align: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.meal-body {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  overflow-y: scroll;
+  overflow-x: none;
+  height: 100%;
+}
+
+.meal-header > button {
+  float: right;
+  margin-right: 0.5rem;
+  height: 2rem;
+  width: 4rem;
+  background-color: rgb(255, 72, 26);
+  border: 0;
+  text-align: center;
+  border-radius: 0.3rem;
+  color: white;
+  font-weight: bold;
+}
+
+.meal-header > button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 101, 63);
+}
+
+.meal-body-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  padding: 0.5rem;
+  overflow: none;
+}
+.meal-body-container > input {
+  height: 2rem;
+  flex:1;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 0.3rem;
+  font-size: 14px;
+  padding-left: 0.2rem;
+}
+
+.meal-body-container > input:focus{
+  border: 1px solid #59caff;
+} 
+
+.delete {
+	width: 2rem;
+	height: 2rem;
+	background-color: red;
+	color: white;
+	border-radius: 0.2rem;
+	border: 0;
+}
+
+.delete:hover {
+  cursor: pointer;
+  background-color: rgb(202, 5, 5);
+}
+.btn-footer {
+  width: 100%;
+ text-align:right;
+ border: 1px solid gray;
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+ height: 3rem;
+ background-color: #37306B;
+}
+
+.btn-footer > button {
+  width: 4rem;
+	height: 2rem;
+  background-color: rgb(255, 72, 26);
+	color: white;
+	border-radius: 0.2rem;
+	border: 0;
+  margin-right: 1rem;
+}
+
+.btn-footer > button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 101, 63);
+}
+
+.btn-footer > button:active {
+  background-color: rgb(255, 101, 63);
+}
+
+.calories >img  {
+  height: 2rem;
+  width: 2rem;
+}
+.calories> div {
+  margin-left: 1rem;
+  display: inline-block;
+  max-width: 2rem;
+  overflow: hidden;
+}
+
+.banner {
+  font-family: 'Pacifico', cursive;
+  padding: 0;
+}
+
+.date {
+  font-weight: bold;
+}
+
+.back-button {
+  margin-right: 0.5rem;
+  height: 2rem;
+  width: 4rem;
+  background-color: rgb(255, 72, 26);
+  border: 0;
+  text-align: center;
+  border-radius: 0.3rem;
+  color: white;
+  font-weight: bold;
+}

@@ -1,0 +1,138 @@
+<div class="day">
+  <div class="header">
+    <p class="date"> <button (click)="goBack()" class="back-button "> Back </button > {{ text | uppercase }}</p>
+    <h1 class="banner">Track Your Meals now!</h1>
+    <div class="calories"><img src="assets/calories.png" alt=""><div> {{ calculateCalories() }} </div> </div>
+  </div>
+  <div class="meal-container">
+    <ul class="meal-tab-links">
+      <li
+        [ngClass]="{ 'meal-tab-active-link': tab.active }"
+        *ngFor="let tab of tabs"
+        (click)="tabSelected(tab.id)"
+      >
+        {{ tab.name }}
+      </li>
+    </ul>
+    <form [formGroup]="dayCalorieForm" (ngSubmit)="saveDayCalories()">
+      <div class="meal-tab-container">
+        <ng-container *ngIf="activeTab === 1">
+          <div class="meal-header">
+            Breakfast
+            <button type="button" (click)="addMealItem('breakfast')">Add</button>
+          </div>
+          <div class="meal-body" formArrayName="breakfast">
+            <div
+              class="meal-body-container"
+              *ngFor="
+                let fromElement of getMealFrom('breakfast').controls;
+                let i = index
+              "
+              [formGroupName]="i"
+            >
+              <input type="text" formControlName="name" placeholder="Food Name"/>
+              <input type="number" formControlName="quantity" placeholder="Quantity in grams" />
+              <input type="number" formControlName="calorie" placeholder="Calories"  />
+              <button type="button" class="delete" (click)="deleteMealItem(i, 'breakfast')">X</button>
+            </div>
+          </div>
+        </ng-container>
+
+
+        <ng-container *ngIf="activeTab === 2">
+          <div class="meal-header">
+            Morning Snack
+            <button type="button" (click)="addMealItem('morningSnack')">Add</button>
+          </div>
+          <div class="meal-body" formArrayName="morningSnack">
+            <div
+              class="meal-body-container"
+              *ngFor="
+                let fromElement of getMealFrom('morningSnack').controls;
+                let i = index
+              "
+              [formGroupName]="i"
+            >
+              <input type="text" formControlName="name" placeholder="Food Name"/>
+              <input type="number" formControlName="quantity" placeholder="Quantity in grams" />
+              <input type="number" formControlName="calorie" placeholder="Calories"  />
+              <button type="button" class="delete" (click)="deleteMealItem(i, 'morningSnack')" >X</button>
+            </div>
+          </div>
+        </ng-container>
+
+
+        <ng-container *ngIf="activeTab === 3">
+          <div class="meal-header">
+            Lunch
+            <button type="button" (click)="addMealItem('lunch')">Add</button>
+          </div>
+          <div class="meal-body" formArrayName="lunch">
+            <div
+              class="meal-body-container"
+              *ngFor="
+                let fromElement of getMealFrom('lunch').controls;
+                let i = index
+              "
+              [formGroupName]="i"
+            >
+              <input type="text" formControlName="name" placeholder="Food Name"/>
+              <input type="number" formControlName="quantity" placeholder="Quantity in grams" />
+              <input type="number" formControlName="calorie" placeholder="Calories"  />
+              <button type="button" class="delete" (click)="deleteMealItem(i, 'lunch')">X</button>
+            </div>
+          </div>
+        </ng-container>
+
+
+
+        <ng-container *ngIf="activeTab === 4">
+          <div class="meal-header">
+            Evening Snack
+            <button type="button" (click)="addMealItem('eveningSnack')">Add</button>
+          </div>
+          <div class="meal-body" formArrayName="eveningSnack">
+            <div
+              class="meal-body-container"
+              *ngFor="
+                let fromElement of getMealFrom('eveningSnack').controls;
+                let i = index
+              "
+              [formGroupName]="i"
+            >
+              <input type="text" formControlName="name" placeholder="Food Name"/>
+              <input type="number" formControlName="quantity" placeholder="Quantity in grams" />
+              <input type="number" formControlName="calorie" placeholder="Calories"  />
+              <button type="button" class="delete" (click)="deleteMealItem(i, 'eveningSnack')">X</button>
+            </div>
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="activeTab === 5">
+          <div class="meal-header">
+            Dinner
+            <button  type="button"(click)="addMealItem('dinner')">Add</button>
+          </div>
+          <div class="meal-body" formArrayName="dinner">
+            <div
+              class="meal-body-container"
+              *ngFor="
+                let fromElement of getMealFrom('dinner').controls;
+                let i = index
+              "
+              [formGroupName]="i"
+            >
+              <input type="text" formControlName="name" placeholder="Food Name"/>
+              <input type="number" formControlName="quantity" placeholder="Quantity in grams" />
+              <input type="number" formControlName="calorie" placeholder="Calories"  />
+              <button type="button" class="delete" (click)="deleteMealItem(i, 'dinner')">X</button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="btn-footer">
+        <button type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
